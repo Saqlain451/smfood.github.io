@@ -1,0 +1,690 @@
+/* importing the google font */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-size: 62.5%;
+}
+
+:root {
+  --bg-light: #eee;
+  --bg-white: #fff;
+  --color-blue: #192a56;
+  --color-green: #27ae60;
+  --color-dark: #666666;
+}
+/* todo---------------------------- Start the navbar styling Part---------------------------- */
+
+.header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: 0rem 8rem;
+  background-color: var(--bg-white);
+  box-shadow: -5px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: var(--color-blue);
+}
+
+.navbar-logo img {
+  width: 75px;
+  height: auto;
+}
+.navbar-logo p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.navbar-list a {
+  font-size: 1.6rem;
+  color: var(--color-dark);
+}
+.navbar-list a:hover {
+  color: var(--color-blue);
+  font-size: 1.65rem;
+}
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.2rem;
+  color: var(--color-blue);
+}
+
+.navbar-icons i {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.navbar-icons i:hover {
+  transform: rotate(360deg);
+  background-color: var(--color-green);
+  box-shadow: none;
+  color: white;
+}
+
+.navbar-icons i:last-child {
+  display: none;
+}
+/* todo ----------------stylig for navbar of tablet part using media ------------------------ */
+@media (width<=1024px) {
+  .header {
+    padding: 0rem 3rem;
+  }
+  .navbar {
+    position: fixed;
+    width: 35%;
+    height: 100vh;
+    right: 0;
+    top: 8rem;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s all linear;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .navbar .navbar-list {
+    flex-direction: column;
+  }
+  .navbar-list a {
+    color: var(--color-green);
+  }
+
+  .navbar-icons i:last-child {
+    display: block;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .active .navbar {
+    transform: translateX(0%);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+/* todo ------------------ start the navbar stylin for mobile devices --------------------- */
+@media (width<441px) {
+  .header {
+    padding: 0rem 1rem;
+  }
+  .navbar-logo p {
+    display: none;
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0rem;
+  }
+  .navbar-icons i {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+/* !---------------------------------- end the part of navbar --------------------------------- */
+#home {
+  background-color: var(--bg-light);
+}
+
+.home-container {
+  padding: 8rem 12rem ;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.hero .intro {
+  font-size: 2.5rem;
+  color: var(--color-green);
+  text-transform: capitalize;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  color: var(--color-blue);
+  text-transform: capitalize;
+  padding: 0.5rem 4rem 0rem 0rem;
+}
+.hero .des {
+  font-size: 2.2rem;
+  color: var(--color-dark);
+  padding: 0.5rem 4rem 0rem 0rem;
+  line-height: 3.4rem;
+}
+
+.btn-order {
+  background-color: var(--color-blue);
+  margin-top: 2rem;
+  padding: 1.2rem 3.2rem;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+  transition: all 0.5s linear;
+  border-radius: 5px;
+  box-shadow: -3px 5px 3px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn-order a {
+  color: var(--bg-white);
+  font-size: 1.5rem;
+}
+
+.btn-order:hover {
+  background-color: var(--color-green);
+  letter-spacing: 0.2rem;
+}
+
+.hero img {
+  width: 88%;
+  height: auto;
+}
+/* todo --------------------tablet part of hero section ------------------------ */
+@media (width<=1024px) {
+  .home-container {
+    padding: 6rem 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 55% 45%;
+  }
+  .hero .intro {
+    font-size: 2.4rem;
+  }
+  .hero h1 {
+    font-size: 4.3rem;
+    padding: 0rem;
+  }
+  .hero des {
+    font-size: 2.2rem;
+    padding: 1rem 2rem 0rem 0rem !important;
+  }
+}
+/* todo --------------hero part for mobile device ---------------------> */
+@media (width<=540px) {
+  .home-container {
+    padding: 6rem 1rem;
+  }
+  .hero {
+    grid-template-columns: 100%;
+    text-align: center;
+  }
+
+  .hero .des {
+    padding: 0rem;
+  }
+
+  .hero-right img {
+    display: block;
+    margin: 2rem auto 0rem auto;
+  }
+}
+/* !----------------------------end the hero part styling------------------------------ */
+/* todo ------------------------ start the servicing part ----------------------------- */
+#service {
+  background-color: var(--bg-white);
+}
+
+.container {
+  padding: 3rem 12rem;
+}
+
+.title {
+  color: var(--color-blue);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sub-title {
+  color: var(--color-green);
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card-parent {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 2rem;
+}
+
+.card-parent .card {
+  width: 95%;
+  height: auto;
+  padding: 2rem 0.5rem;
+}
+
+.card img {
+  display: block;
+  margin: auto;
+}
+
+.card-title {
+  font-size: 3.2rem;
+  text-transform: capitalize;
+  color: var(--color-blue);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.card-content {
+  font-size: 1.7rem;
+  color: var(--color-dark);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+@media (541px<=width<=1024px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+@media (width<=540px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-parent {
+    grid-template-columns: auto;
+    margin: 1rem 0rem 0rem 1rem;
+  }
+  .card {
+    width: 100%;
+    margin: auto;
+  }
+}
+/* !------------------------ end the servicing part ----------------------------- */
+/* todo -------------------start the menu part ----------------------------------- */
+#menu {
+  background-color: var(--bg-light);
+}
+
+#menu .card {
+  background-color: var(--bg-white);
+  border-radius: 5px;
+  padding: 0rem;
+  margin-top: 2rem;
+  transition: 0.4s all linear;
+}
+
+#menu .card:hover{
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#menu .card img {
+  width: 100%;
+  height: auto;
+}
+
+#menu .card-title {
+  font-size: 2.5rem;
+  text-align: start;
+  margin-left: 2rem;
+}
+
+#menu .card-content {
+  font-size: 1.6rem;
+  text-align: start;
+  margin-left: 2rem;
+}
+
+.card-btns {
+  margin: 0rem 2rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-green);
+}
+
+.card-btns .btn-order:hover {
+  letter-spacing: 0;
+}
+
+.card-btns p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (541px<=width<=900px) {
+  #menu .card-parent {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+/* *-------------------end the menu part ----------------------------------- */
+/*  todo --------------------start the part of about ------------------------*/
+#about {
+  background-color: var(--bg-white);
+}
+
+.about-parent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.about-left img {
+  width: 102%;
+}
+
+.about-right h1 {
+  color: var(--color-blue);
+  text-transform: capitalize;
+  font-size: 4rem;
+}
+
+.about-right p {
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  color: var(--color-dark);
+  margin-top: 1rem;
+}
+
+.about-parent .card-parent {
+  grid-template-columns: auto auto;
+}
+
+.about-parent .card {
+  width: 95%;
+  background-color: var(--bg-light);
+  padding: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  border-radius: 5px;
+  text-transform: capitalize;
+  box-shadow: 0rem .5rem .5rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.5s all linear;
+}
+
+.about-parent .card:hover{
+  box-shadow: none;
+}
+
+.about-parent .card i {
+  font-size: 3.5rem;
+  color: var(--color-green);
+}
+
+.card-parent-1 {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.card-parent-1 .card {
+  margin-top: 1rem;
+  width: 97.5%;
+}
+
+@media (width<=1024px) {
+  .about-parent {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+@media (width<=540px) {
+  .about-parent {
+    grid-template-columns: 100%;
+    text-align: center;
+  }
+}
+
+/*  *-------------------------end the part of about ------------------------*/
+/*todo-------------------------start the part of review ---------------------*/
+#review {
+  background-color: var(--bg-light);
+}
+
+#review .card {
+  background-color: var(--bg-white);
+  width: 96%;
+  height: auto;
+  margin-top: 1rem;
+  transition: 0.5s all linear;
+  cursor: pointer;
+}
+
+#review .card:hover{
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2); 
+}
+
+#review .card .card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#review .card .card-top img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#review .card .card-top .name p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+#review .card .card-top .name i {
+  font-size: 1.7rem;
+  color: var(--color-green);
+}
+
+#review .card .card-top i {
+  font-size: 8rem;
+  color: var(--bg-light);
+}
+
+#review .card .card-body {
+  font-size: 1.8rem;
+  font-variant: var(--color-dark);
+  line-height: 3rem;
+  padding: 1rem 2rem;
+}
+
+/**    -------------------------end the part of review ---------------------*/
+/* todo ------------------------start of order part ------------------------ */
+
+form {
+  width: 65%;
+  background-color: var(--bg-white);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+  margin: 1rem auto;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.form-parent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+}
+
+form label {
+  display: block;
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  color: var(--color-dark);
+  margin: 1rem 0rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 4rem;
+  border: none;
+  outline: none;
+  background-color: var(--bg-light);
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+textarea {
+  height: 16rem;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--color-green);
+}
+
+form .btn-order {
+  width: 15rem;
+  letter-spacing: normal;
+  margin-bottom: 2rem;
+}
+
+form .btn-order:hover {
+  letter-spacing: 0.1rem;
+}
+
+.form-sub-btn {
+  text-align: right;
+}
+
+@media(width<=990px){
+  form{
+    width: 90%;
+  }
+}
+
+
+@media (width<=540px){
+  form{
+    width: 98%;
+  }
+  .form-parent{
+    grid-gap: 1rem;
+  }
+}
+/* -----------------------------end the styling part of order -------------------------- */
+/* todo -----------------------------start the footer part ----------------------------- */
+
+footer{
+  background-color: var(--bg-light);
+}
+
+footer .card-parent{
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+}
+footer .card-parent .card{
+  width: 100%;
+  height: auto;
+}
+
+.footer-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo p{
+  font-size: 2rem;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+footer .media-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+footer .media-icons a{
+  text-decoration: none;
+  color: var(--color-blue);
+  
+}
+
+footer .card i{
+  font-size: 2.5rem;
+}
+
+footer .card h1{
+  font-size: 3.5rem;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+footer .card li{
+  font-size: 1.8rem;
+  color: var(--color-dark);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+footer .card li a{
+  font-size: 1.8rem;
+  color: var(--color-dark);
+}
+
+footer li:hover{
+  color: var(--color-green);
+}
+footer li:hover a{
+  color: var(--color-green);
+}
+
+@media(width<=800px){
+  footer .card-parent{
+    grid-template-columns: auto auto;
+  }
+}
+
+@media(width<=441px){
+  footer .card-parent{
+    grid-template-columns: auto ;
+  }
+}
