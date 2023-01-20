@@ -17,6 +17,9 @@
   --color-green: #27ae60;
   --color-dark: #666666;
 }
+html{
+  scroll-behavior: smooth-;
+}
 /* todo---------------------------- Start the navbar styling Part---------------------------- */
 
 .header {
